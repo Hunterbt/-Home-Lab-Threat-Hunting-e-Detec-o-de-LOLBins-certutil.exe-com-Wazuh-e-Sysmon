@@ -45,6 +45,8 @@ Removendo os filtros restritivos de severidade e buscando pela cadeia de execuç
 ### Passo 3: Análise Profunda (Deep Dive)
 Expandindo os logs em formato JSON e analisando os campos coletados pelo Sysmon, foi possível confirmar a "arma do crime". No campo `data.win.eventdata.commandLine`, localizou-se a linha de comando exata utilizada no ataque.
 
+<img width="1065" height="761" alt="image" src="https://github.com/user-attachments/assets/65843b3a-909f-4fc7-8144-a317fbadd213" />
+
 ```json
         "commandLine": "\\\"C:\\\\Windows\\\\system32\\\\certutil.exe\\\" -hashfile C:\\\\windows\\\\System32\\\\cmd.exe MD5",
 
@@ -52,3 +54,4 @@ Expandindo os logs em formato JSON e analisando os campos coletados pelo Sysmon,
       "win": {
         "eventdata": {
           "originalFileName": "CertUtil.exe",
+
